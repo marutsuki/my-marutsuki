@@ -1,8 +1,6 @@
 'use client';
 import { styled } from "styled-components";
 export const DarkBackground = styled.body`
-    height: 100vh;
-    width: 100vw;
     background-color: #202329;
 `;
 
@@ -19,7 +17,11 @@ export const VerticalMiddleLayout = styled.main`
 `
 
 export const SkinnyLayout = styled.main`
+    > * {
+        margin: 5rem 0;
+    }
     position: absolute;
+    top: 25%;
     max-width: ${props => props.theme.width};
 `
 

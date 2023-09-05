@@ -10,7 +10,6 @@ export const ProfileSkeleton = styled.div`
 export const ProfileImage = styled.img`
     max-width: 15rem;
     border-radius: 50%;
-    margin: 20px;
 }
 `
 
