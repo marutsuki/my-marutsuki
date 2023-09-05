@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
-import Loading from "./loading";
+import Loading from "app/loading";
+import Home from "app/home";
 
 enum LoadingStatus {
     PENDING = 0,
@@ -16,5 +17,5 @@ export default function Page() {
             onerror={() => setLoadingStatus(LoadingStatus.ERROR)}
             buffer={5000}/>
     }
-    return <h1>Hello, Next.js!</h1>;
+    return <Home/>;
 }
