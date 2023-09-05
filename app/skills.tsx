@@ -1,5 +1,5 @@
-import { Badge, BadgeImage, BadgeLabel, SkillStack, SkillStackRow, SkillStackRowHover } from "common/Badge"
-import { Title } from "common/Common";
+import { Badge, BadgeImage, BadgeLabel, SkillStack, SkillStackRow, SkillStackRowHover } from "common/Badge.styled"
+import { Title } from "common/Common.styled";
 
 interface Skill {
     name: string,

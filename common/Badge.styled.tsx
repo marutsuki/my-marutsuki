@@ -5,8 +5,8 @@ export const Badge = styled.div`
     justify-content: space-between;
     height: 2rem;
     width: 10rem;
-    background-color: #404a5c;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: var(--accent-color);
+    box-shadow: 1px 1px 1px 1px var(--shadow-color);
     border-radius: 2px;
     padding: 5px;
     margin: 2px;
@@ -48,5 +48,4 @@ export const SkillStackRow = styled.div`
 export const SkillStack = styled.div`
     display: flex;
     flex-direction: column;
-
 `;

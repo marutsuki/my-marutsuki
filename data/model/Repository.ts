@@ -6,6 +6,7 @@ export interface Repository {
         ssh: string
     }
     lastUpdated: number
+    description: string
 }
 
 export const fromJSON = (json: any): Repository | null => {
@@ -17,7 +18,8 @@ export const fromJSON = (json: any): Repository | null => {
                 http: json.clone_url,
                 ssh: json.ssh_url
             },
-            lastUpdated: Date.parse(json.updated_at)
+            lastUpdated: Date.parse(json.updated_at),
+            description: json.description
         }
     } catch (e: unknown) {
         console.error("Repository.ts ::: fromJSON ::: Failed to parse JSON to repository:", e);

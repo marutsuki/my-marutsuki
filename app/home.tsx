@@ -2,12 +2,15 @@ import Profile from "app/profile";
 import { ProfileThemeWrapper, SkinnyLayout, VerticalMiddleLayout } from "common/Container.styled";
 import SkillStack from "./skills";
 import OtherSkills from "./otherSkills";
+import { Separator } from "common/Common.styled";
+import Projects from "./projects";
 
 const Home: React.FC<{}> = () => {
     return <ProfileThemeWrapper>
         <VerticalMiddleLayout>
             <SkinnyLayout>
                 <Profile name="Lucien" bio="During the weekdays, a Software Engineer. During the weekends, a digital artist and musician." avatarRef="/images/me.png"/>
+                <Separator/>
                 <SkillStack levels={4} groups={
                     new Map(
                         [
@@ -84,7 +87,10 @@ const Home: React.FC<{}> = () => {
                     )
                 }
                 />
+                <Separator/>
                 <OtherSkills/>
+                <Separator/>
+                <Projects/>
             </SkinnyLayout>
         </VerticalMiddleLayout>
     </ProfileThemeWrapper>

@@ -1,4 +1,4 @@
-import { TextBlock, Title } from "common/Common"
+import { TextBlock, Title } from "common/Common.styled"
 
 const OtherSkills: React.FC<{}> = () => {
     return <section>
