@@ -1,4 +1,3 @@
-'use client'
 import { keyframes, styled } from 'styled-components'
 
 const loadAnimation = keyframes`
@@ -49,6 +48,7 @@ const flashAnimation = keyframes`
         opacity: 100%;
     }
 `
+
 export const Spinner = styled.span`
     color: #ffffff;
     font-size: 90px;
@@ -77,4 +77,5 @@ export const StarNoAnimation = styled.span`
     position: absolute;
     background-image: url("/images/marustar.png");
     background-size: contain;
+    animation: ${rotateAnimation} 1.7s infinite ease-in-out reverse, ${flashAnimation} 1.7s infinite ease-in-out;
 `

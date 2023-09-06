@@ -44,6 +44,12 @@ export const SkinnyLayout = styled.main`
     }
 `
 
+SkinnyLayout.defaultProps = {
+  theme: {
+    width: '800px'
+  }
+}
+
 const BlurIn = keyframes`
     0% {
         -webkit-filter: blur(2px);
@@ -73,12 +79,6 @@ export const Section = styled.div`
         margin: 0;
     }
 `
-
-SkinnyLayout.defaultProps = {
-  theme: {
-    width: '600px'
-  }
-}
 
 export const ProfileThemeWrapper = styled.div`
     color: var(--primary-color);

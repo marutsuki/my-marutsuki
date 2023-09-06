@@ -1,6 +1,7 @@
+import { App, Body } from 'common/Container.styled'
 import { Quicksand } from 'next/font/google'
 import React, { type ReactNode } from 'react'
-import { App, Body } from '../common/Container.styled'
+import StyledComponentsRegistry from './registry'
 
 const quicksand = Quicksand({
   weight: '300',
@@ -14,10 +15,13 @@ export default function RootLayout ({
   children: ReactNode
 }): React.ReactNode {
   return (
-        <App lang="en" className={quicksand.className}>
-            <Body>
-                {children}
-            </Body>
-        </App>
+    <StyledComponentsRegistry>
+      <App lang="en" className={quicksand.className}>
+        <Body>
+            {children}
+        </Body>
+      </App>
+    </StyledComponentsRegistry>
+
   )
 }
