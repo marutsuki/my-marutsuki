@@ -1,4 +1,4 @@
-import { DataTable, FlexRow, Link, TextBlock, Title } from 'common/Common.styled'
+import { DataTable, FlexRow, Link, Title } from 'common/Common.styled'
 import { Section } from 'common/Container.styled'
 import { ActionIcon } from 'common/Github.styled'
 import React from 'react'
@@ -7,8 +7,8 @@ import { copyText } from 'util/copy'
 const Contact: React.FC<unknown> = () => {
   return <Section>
         <Title>Contact Me</Title>
-        <TextBlock>
-            <DataTable>
+        <DataTable>
+            <tbody>
                 <tr>
                     <td>Email</td>
                     <td>
@@ -35,10 +35,8 @@ const Contact: React.FC<unknown> = () => {
                         </FlexRow>
                     </td>
                 </tr>
-
-            </DataTable>
-
-        </TextBlock>
+            </tbody>
+        </DataTable>
     </Section>
 }
 
