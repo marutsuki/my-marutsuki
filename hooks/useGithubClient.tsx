@@ -1,7 +1,7 @@
 import { GitHubClient, type GithubData } from 'data/github.client'
 import { useEffect, useState } from 'react'
 
-export const useGithubClient = <T,>(extractor: (data: GithubData) => T): T | null => {
+export const useGithubClient = <T,>(extractor: (data: GithubData) => T | undefined): T | null => {
   const [data, setData] = useState<GithubData | null>(null)
   useEffect(() => {
     GitHubClient.getAll().then(data => {
@@ -13,5 +13,9 @@ export const useGithubClient = <T,>(extractor: (data: GithubData) => T): T | nul
   if (data === null) {
     return null
   }
-  return extractor(data)
+  const res = extractor(data)
+  if (res === undefined) {
+    return null
+  }
+  return res
 }

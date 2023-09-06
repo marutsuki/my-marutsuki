@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { type Repository, fromJSON as repoFromJSON } from './model/Repository'
-import { type User, fromJSON as userFromJSON } from './model/User'
+import { fromJSON as repoFromJSON, type Repository } from './model/Repository'
+import { fromJSON as userFromJSON, type User } from './model/User'
 const endpoint = 'https://api.github.com'
 
 const DEFAULT_HEADERS = {
@@ -12,10 +12,14 @@ export interface GithubData {
 }
 class GitHubClient {
   private static readonly GITHUB_USERNAME: string = 'marutsuki'
+
   private static readonly REPO_ENDPOINT: string = `${endpoint}/users/${GitHubClient.GITHUB_USERNAME}/repos`
+
   private static readonly USER_ENDPOINT: string = `${endpoint}/users/${GitHubClient.GITHUB_USERNAME}`
+
   private readonly cache: GithubData = {}
-  private async getRepos (): Promise<Repository[]> {
+
+  private async getRepos (): Promise<Repository[] | undefined> {
     if (this.cache.repos !== undefined) {
       return this.cache.repos
     }
@@ -30,7 +34,7 @@ class GitHubClient {
     return repos
   }
 
-  private async getUser (): Promise<User> {
+  private async getUser (): Promise<User | undefined> {
     if (this.cache.user !== undefined) {
       return this.cache.user
     }
@@ -55,3 +59,4 @@ class GitHubClient {
 const INSTANCE = new GitHubClient()
 
 export { INSTANCE as GitHubClient }
+

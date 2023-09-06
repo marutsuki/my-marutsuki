@@ -9,7 +9,7 @@ export interface Repository {
   description: string
 }
 
-export const fromJSON = (json: any): Repository | null => {
+export const fromJSON = (json: any): Repository | undefined => {
   try {
     return {
       name: json.name,
@@ -23,6 +23,6 @@ export const fromJSON = (json: any): Repository | null => {
     }
   } catch (e: unknown) {
     console.error('Repository.ts ::: fromJSON ::: Failed to parse JSON to repository:', e)
-    return null
+    return undefined
   }
 }

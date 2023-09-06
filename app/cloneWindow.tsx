@@ -11,12 +11,15 @@ enum CloneMethod {
   HTTP
 }
 
-const CloneWindowWrapper: React.FC<{ repo: Repository, onExit: () => void }> = ({ repo, onExit }) => {
+const CloneWindowWrapper: React.FC<{ repo: Repository, onExit: () => void }> = ({ repo, onExit }): React.ReactNode => {
   const [cloneMethod, setCloneMethod] = useState<CloneMethod>(CloneMethod.HTTP)
   const activeCloneWindow = useRef<HTMLDivElement>(null)
   let firstClick = true
   useEffect(() => {
     const clickEL = (e: Event): void => {
+      if (activeCloneWindow.current === null) {
+        return
+      }
       if (!firstClick && !activeCloneWindow.current.contains(e.target as Node)) {
         onExit()
       }
