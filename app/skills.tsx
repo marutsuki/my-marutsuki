@@ -14,7 +14,7 @@ interface SkillGroup {
 interface SkillsProps {
   levels: number
   groups: Map<number, SkillGroup>
-};
+}
 const Skills: React.FC<SkillsProps> = ({ levels, groups }) => {
   return <Section>
        <SkillStack>
@@ -33,7 +33,7 @@ const Skills: React.FC<SkillsProps> = ({ levels, groups }) => {
                         </Badge>)
                 }
                     <SkillStackRowHover>
-                        {groups.get(level)?.name !== undefined || ''}
+                        {groups.get(level)?.name ?? ''}
                     </SkillStackRowHover>
                 </SkillStackRow>
             )

@@ -65,10 +65,10 @@ export const ActionIconInternal = styled.img<ActionIconInternalProps>`
 
     position: relative;
 
-    height: ${props => props.theme.width || '40px'};
-    max-width: ${props => props.theme.width || '40px'};
+    height: ${props => props.theme.width ?? '40px'};
+    max-width: ${props => props.theme.width ?? '40px'};
     
-    filter: invert(calc(${props => props.theme.contrast || '10%'}));
+    filter: invert(calc(${props => props.theme.contrast ?? '10%'}));
 
     transition: all linear 0.1s;
 

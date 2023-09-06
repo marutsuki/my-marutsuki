@@ -31,6 +31,7 @@ export const SkillStackRowHover = styled.div`
     overflow: hidden;
     text-align: center;
     line-height: 2.5rem;
+    backdrop-filter: blur(2px);
 `
 
 export const SkillStackRow = styled.div`
