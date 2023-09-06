@@ -5,19 +5,12 @@ import { GitHubClient } from "data/github.client"
 import { Repository } from "data/model/Repository";
 import { useEffect, useRef, useState } from "react"
 import CloneWindowWrapper from "./cloneWindow";
+import { useGithubClient } from "hooks/useGithubClient";
+import { newTab } from "util/redirect";
 
 const Projects: React.FC<{}> = () => {
-    const [repos, setRepos] = useState<Repository[]>([]);
+    const repos = useGithubClient<Repository[]>(data => data.repos || []);
     const [activeKey, setActiveKey] = useState<number | undefined>();
-    useEffect(() => {
-        GitHubClient.getAll().then(data => {
-            setRepos(data.repos);
-        });
-    }, [])
-
-    const newTab = (url: string) => {
-        window.open(url, "_blank");
-    }
 
     const openClonePopup = (index: number) => {
         setActiveKey(index);
@@ -35,11 +28,11 @@ const Projects: React.FC<{}> = () => {
                         <SubTitle>Last updated: {new Date(repo.lastUpdated).toDateString()}</SubTitle>
                         <RepositoryDesc>{repo.description}</RepositoryDesc>
                         <ActionIconRow>
-                            <ActionIcon src="/images/download.png" onClick={() => openClonePopup(index)}></ActionIcon>
+                            <ActionIcon src="/images/download.png" onClick={() => openClonePopup(index)} tooltip="Clone"></ActionIcon>
                             {
                                 index === activeKey ? <CloneWindowWrapper repo={repo} onExit={() => setActiveKey(undefined)}/>: ""
                             }
-                            <ActionIcon src="/images/github.svg" onClick={() => newTab(repo.htmlUrl)}/>
+                            <ActionIcon src="/images/github.svg" onClick={() => newTab(repo.htmlUrl)} tooltip="Repository"/>
                         </ActionIconRow>
                         
                     </RepositoryCard>

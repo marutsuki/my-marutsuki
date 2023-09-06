@@ -6,7 +6,7 @@ const endpoint = "https://api.github.com";
 const DEFAULT_HEADERS = {
     'X-GitHub-Api-Version': '2022-11-28'
 }
-interface Cache {
+export interface GithubData {
     repos?: Array<Repository>,
     user?: User
 }
@@ -15,7 +15,7 @@ class GitHubClient {
     private static readonly GITHUB_USERNAME: string = "marutsuki"
     private static readonly REPO_ENDPOINT: string = `${endpoint}/users/${GitHubClient.GITHUB_USERNAME}/repos`;
     private static readonly USER_ENDPOINT: string = `${endpoint}/users/${GitHubClient.GITHUB_USERNAME}`;
-    private cache: Cache = {};
+    private cache: GithubData = {};
     private async getRepos() {
         if (this.cache.repos !== undefined) {
             return this.cache.repos;

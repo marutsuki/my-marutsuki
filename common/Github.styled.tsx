@@ -1,4 +1,5 @@
 import { keyframes, styled } from "styled-components";
+import { Tooltip } from "./Common.styled";
 
 export const ProjectSection = styled.section`
     display: grid;
@@ -22,9 +23,9 @@ export const RepositoryCard = styled.a`
 
     background: var(--accent-color);
     box-shadow: 1px 1px 1px 1px var(--shadow-color);
-    border-radius: 2px;
+    border-radius: 10px;
 
-    padding: 5px;
+    padding: 10px;
 
     transition: all linear 0.1s;
 
@@ -44,7 +45,7 @@ export const RepositoryDesc = styled.p`
     font-size: 0.9rem;
 `
 
-export const ActionIcon = styled.img`
+export const ActionIconInternal = styled.img`
     &:hover {
         filter: invert(90%);
     }
@@ -61,6 +62,26 @@ export const ActionIcon = styled.img`
     cursor: pointer;
 `
 
+export const ActionIconWrapper = styled.div`
+    &:hover ${Tooltip} {
+        display: block;
+        left: 50%;
+    }
+
+    position: relative;
+`
+
+interface ActionIconProps {
+    src: string;
+    onClick: () => void;
+    tooltip?: string;
+}
+export const ActionIcon: React.FC<ActionIconProps> = ({src, onClick, tooltip}) => {
+    return <ActionIconWrapper>
+        <ActionIconInternal src={src} onClick={onClick}/>
+        {tooltip && <Tooltip>{tooltip}</Tooltip>}
+    </ActionIconWrapper>
+}
 export const ActionIconRow = styled.div`
     & > * {
         margin: 0 2px;
@@ -129,7 +150,7 @@ export const CloneUrl = styled.input`
 export const CloneInput = styled.div`
     display: flex;
 
-    border: solid 1px grey;
+    border: solid 1px lightgrey;
     border-radius: 10px;
     background: #e3e3e3;
     
@@ -180,4 +201,42 @@ export const ActiveTabBar = styled.hr`
     background: red;
     height: 1px;
     width: 100%;
+`
+
+/**
+ * Begin Github profile components
+ */
+
+export const GithubProfileCard = styled.div`
+    &:hover {
+        box-shadow: 1px 1px 4px 4px var(--primary-color);
+    }
+
+    &:hover ${Tooltip} {
+        display: block;
+        left: 95%;
+        top: 95%;
+        color: black;
+    }
+
+    &:active {
+        background: var(--primary-color);
+        color: var(--bg-color);
+    }
+
+    
+    position: relative;
+    padding: 30px;
+    background: var(--accent-color);
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px var(--shadow-color);
+
+    transition: all linear 0.1s;
+`
+
+export const ProfileImage = styled.img`
+    max-width: 10rem;
+    border-radius: 50%;
+}
 `

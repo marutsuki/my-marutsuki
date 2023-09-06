@@ -4,6 +4,7 @@ import SkillStack from "./skills";
 import OtherSkills from "./otherSkills";
 import { Separator } from "common/Common.styled";
 import Projects from "./projects";
+import GithubProfile from "./github";
 
 const Home: React.FC<{}> = () => {
     return <ProfileThemeWrapper>
@@ -89,6 +90,8 @@ const Home: React.FC<{}> = () => {
                 />
                 <Separator/>
                 <OtherSkills/>
+                <Separator/>
+                <GithubProfile/>
                 <Separator/>
                 <Projects/>
             </SkinnyLayout>

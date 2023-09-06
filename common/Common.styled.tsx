@@ -5,6 +5,24 @@ export const Separator = styled.hr`
     border: none;
     height: 5px;
 `
+
+export interface TooltipProps {
+    theme: {
+        left: string
+        top: string
+    }
+}
+export const Tooltip = styled.div<TooltipProps>`
+    position: absolute;
+    background: white;
+    border: solid 1px grey;
+    display: none;
+    padding: 2px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    left: ${props => props.theme.left};
+    top: ${props => props.theme.top};
+`
 export const Title = styled.h1`
     text-align: center;
     width: 100%;
@@ -23,4 +41,16 @@ export const SubTitle = styled.p`
 export const TextBlock = styled.p`
     text-align: center;
     width: 100%;
+`
+
+export const FlexRow = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+`
+
+export const FlexColumn = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 `
