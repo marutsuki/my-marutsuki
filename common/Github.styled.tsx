@@ -249,9 +249,3 @@ export const GithubProfileCard = styled.div`
 
     transition: all linear 0.1s;
 `
-
-export const ProfileImage = styled.img`
-    max-width: 10rem;
-    border-radius: 50%;
-}
-`

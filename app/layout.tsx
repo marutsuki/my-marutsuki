@@ -1,5 +1,12 @@
+import { Quicksand } from 'next/font/google'
 import React, { type ReactNode } from 'react'
 import { App, Body } from '../common/Container.styled'
+
+const quicksand = Quicksand({
+  weight: '300',
+  display: 'swap',
+  subsets: ['latin']
+})
 
 export default function RootLayout ({
   children
@@ -7,10 +14,7 @@ export default function RootLayout ({
   children: ReactNode
 }): React.ReactNode {
   return (
-        <App lang="en">
-            <link rel="preconnect" href="https://fonts.googleapis.com"/>
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>
-            <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Ubuntu:wght@300&display=swap" rel="stylesheet"/>
+        <App lang="en" className={quicksand.className}>
             <Body>
                 {children}
             </Body>

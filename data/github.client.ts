@@ -19,7 +19,7 @@ class GitHubClient {
 
   private readonly cache: GithubData = {}
 
-  private async getRepos (): Promise<Repository[] | undefined> {
+  async getRepos (): Promise<Repository[] | undefined> {
     if (this.cache.repos !== undefined) {
       return this.cache.repos
     }
@@ -34,7 +34,7 @@ class GitHubClient {
     return repos
   }
 
-  private async getUser (): Promise<User | undefined> {
+  async getUser (): Promise<User | undefined> {
     if (this.cache.user !== undefined) {
       return this.cache.user
     }

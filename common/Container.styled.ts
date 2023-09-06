@@ -71,6 +71,5 @@ SkinnyLayout.defaultProps = {
 }
 
 export const ProfileThemeWrapper = styled.div`
-    font-family: 'Ubuntu', sans-serif;
     color: var(--primary-color);
 `

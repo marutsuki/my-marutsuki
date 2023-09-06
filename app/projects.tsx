@@ -2,8 +2,10 @@
 import { SubTitle, Title } from 'common/Common.styled'
 import { Section } from 'common/Container.styled'
 import { ActionIcon, ActionIconRow, ProjectSection, RepositoryCard, RepositoryDesc, RepositoryTitle } from 'common/Github.styled'
+import { GitHubClient } from 'data/github.client'
 import { type Repository } from 'data/model/Repository'
 import { useGithubClient } from 'hooks/useGithubClient'
+import { type GetStaticProps } from 'next'
 import React, { useState } from 'react'
 import { newTab } from 'util/redirect'
 import CloneWindowWrapper from './cloneWindow'
@@ -43,6 +45,17 @@ const Projects: React.FC<unknown> = () => {
             }
         </ProjectSection>
     </Section>
+}
+
+export const getStaticProps: GetStaticProps<{
+  repo?: Repository[]
+}> = async () => {
+  const repo = await GitHubClient.getRepos()
+  return {
+    props: {
+      repo
+    }
+  }
 }
 
 export default Projects

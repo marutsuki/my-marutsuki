@@ -20,7 +20,7 @@ const Skills: React.FC<SkillsProps> = ({ levels, groups }) => {
        <SkillStack>
         <Title>
             What I Use
-        </Title>a
+        </Title>
         {
             [...Array(levels).keys()].reverse().map(level => <SkillStackRow key={level}>
                 {
