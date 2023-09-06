@@ -1,5 +1,6 @@
 import { Badge, BadgeImage, BadgeLabel, SkillStack, SkillStackRow, SkillStackRowHover } from "common/Badge.styled"
 import { Title } from "common/Common.styled";
+import { Section } from "common/Container.styled";
 
 interface Skill {
     name: string,
@@ -15,7 +16,8 @@ interface SkillsProps {
 }
 
 const Skills: React.FC<SkillsProps> = ({levels, groups}) => {
-    return <SkillStack>
+    return <Section>
+       <SkillStack>
         <Title>
             What I Use
         </Title>
@@ -37,6 +39,7 @@ const Skills: React.FC<SkillsProps> = ({levels, groups}) => {
                 || "")
         }
     </SkillStack>
+    </Section>
 }
 
 export default Skills;

@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react"
 import CloneWindowWrapper from "./cloneWindow";
 import { useGithubClient } from "hooks/useGithubClient";
 import { newTab } from "util/redirect";
+import { Section } from "common/Container.styled";
 
 const Projects: React.FC<{}> = () => {
     const repos = useGithubClient<Repository[]>(data => data.repos || []);
@@ -16,7 +17,7 @@ const Projects: React.FC<{}> = () => {
         setActiveKey(index);
     }
 
-    return <>
+    return <Section>
         <Title>My Projects</Title>
         <SubTitle>Fetched from GitHub</SubTitle>
         <ProjectSection>
@@ -39,7 +40,7 @@ const Projects: React.FC<{}> = () => {
                 )
             }
         </ProjectSection>
-    </>
+    </Section>
 }
 
 export default Projects;

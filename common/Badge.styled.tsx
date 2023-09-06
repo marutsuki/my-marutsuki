@@ -46,6 +46,4 @@ export const SkillStackRow = styled.div`
 `;
 
 export const SkillStack = styled.div`
-    display: flex;
-    flex-direction: column;
 `;

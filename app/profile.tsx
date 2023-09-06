@@ -1,3 +1,4 @@
+import { Section } from "common/Container.styled";
 import { ProfileBio, ProfileImage, ProfileSkeleton, ProfileTitle } from "common/Profile.styled";
 interface ProfileProps {
     avatarRef: string,
@@ -5,7 +6,8 @@ interface ProfileProps {
     bio: string
 }
 const Profile: React.FC<ProfileProps> = ({avatarRef, name, bio}) => {
-    return <ProfileSkeleton>
+    return <Section>
+        <ProfileSkeleton>
         <ProfileImage src={avatarRef}/>
         <section>
             <ProfileTitle>
@@ -16,6 +18,7 @@ const Profile: React.FC<ProfileProps> = ({avatarRef, name, bio}) => {
             </ProfileBio>
         </section>
     </ProfileSkeleton>
+        </Section>
 }
 
 export default Profile;

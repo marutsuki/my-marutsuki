@@ -1,9 +1,22 @@
-import { styled } from "styled-components";
+import { keyframes, styled } from "styled-components";
 
+const GRADIENT = "linear-gradient(90deg, transparent, var(--primary-color) 25%, var(--primary-color) 75%, transparent)"
+
+const Expand = keyframes`
+    0% {
+        width: 0;
+        opacity: 0%;
+    }
+    100% {
+        width: 100%;
+        opacity: 100%;
+    }
+`
 export const Separator = styled.hr`
-    background: linear-gradient(90deg, transparent, var(--primary-color) 25%, var(--primary-color) 75%, transparent);
+    background: ${GRADIENT};
     border: none;
     height: 5px;
+    animation: 0.5s ease-out ${Expand};
 `
 
 export interface TooltipProps {
@@ -53,4 +66,58 @@ export const FlexColumn = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+`
+export const DataTable = styled.table`
+    & tr {
+        height: 4rem;
+        width: 100%;
+        display: grid;
+        place-items: center;
+        grid-template-columns: 0.5fr 1fr;
+        grid-template-areas:
+            'col1 col2'
+            'sep sep'
+        
+    }
+
+    & tr::after {
+        grid-area: sep;
+        content: '';
+        background: ${GRADIENT};
+        width: 80%;
+        height: 2px;
+        margin: 10px 0;
+    }
+
+    & td {
+        width: 50%;
+        padding: 5px;
+    }
+
+    & td:nth-child(1) {
+        grid-area: col1;
+        background: var(--accent-color);
+        border-radius: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    & td:nth-child(2) {
+        grid-area: col2;
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        text-align: right;
+    }
+    & td:nth-child(2) * {
+        margin: 0 5px;
+    }
+    
+    width: 100%;
+`
+
+export const Link = styled.a`
+    &:visited {
+        color: var(--secondary-color);
+    }
+    color: cyan;
 `

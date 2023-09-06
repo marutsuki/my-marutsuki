@@ -1,7 +1,8 @@
 import { TextBlock, Title } from "common/Common.styled"
+import { Section } from "common/Container.styled";
 
 const OtherSkills: React.FC<{}> = () => {
-    return <section>
+    return <Section>
         <Title>
             Other things I use
         </Title>
@@ -20,7 +21,7 @@ const OtherSkills: React.FC<{}> = () => {
         <TextBlock>
         Maven • Gradle • Jenkins • Docker
         </TextBlock>
-    </section>
+    </Section>
 }
 
 export default OtherSkills;

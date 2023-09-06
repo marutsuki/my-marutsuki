@@ -3,6 +3,7 @@ import { Tooltip } from "./Common.styled";
 
 export const ProjectSection = styled.section`
     display: grid;
+    place-items: center;
     grid-template-columns: 1fr 1fr;
 `
 export const RepositoryCard = styled.a`
@@ -45,17 +46,28 @@ export const RepositoryDesc = styled.p`
     font-size: 0.9rem;
 `
 
-export const ActionIconInternal = styled.img`
+interface ActionIconInternalProps {
+    theme: {
+        width?: string;
+        contrast?: string;
+    }
+}
+
+export const ActionIconInternal = styled.img<ActionIconInternalProps>`
     &:hover {
         filter: invert(90%);
     }
 
+    &:active {
+        filter: invert(90%) blur(2px);
+    }
+
     position: relative;
 
-    height: 40px;
-    max-width: 40px;
-
-    filter: invert(10%);
+    height: ${props => props.theme.width || "40px"};
+    max-width: ${props => props.theme.width || "40px"};
+    
+    filter: invert(calc(${props => props.theme.contrast || "10%"}));
 
     transition: all linear 0.1s;
 
@@ -75,10 +87,12 @@ interface ActionIconProps {
     src: string;
     onClick: () => void;
     tooltip?: string;
+    width?: string;
+    contrast?: string;
 }
-export const ActionIcon: React.FC<ActionIconProps> = ({src, onClick, tooltip}) => {
+export const ActionIcon: React.FC<ActionIconProps> = ({src, onClick, tooltip, width, contrast}) => {
     return <ActionIconWrapper>
-        <ActionIconInternal src={src} onClick={onClick}/>
+        <ActionIconInternal src={src} onClick={onClick} theme={{width, contrast}}/>
         {tooltip && <Tooltip>{tooltip}</Tooltip>}
     </ActionIconWrapper>
 }
