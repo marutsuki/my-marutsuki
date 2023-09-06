@@ -37,6 +37,11 @@ export const SkinnyLayout = styled.main`
     position: absolute;
     top: 25%;
     max-width: ${props => props.theme.width};
+
+    @media (max-width: 480px) {
+        max-width: 440px;
+        top: 10%;
+    }
 `
 
 const BlurIn = keyframes`
@@ -62,6 +67,11 @@ export const Section = styled.div`
     border-radius: 20px;
     transition: all linear 0.1s;
     animation: 2s ease-out ${BlurIn};
+
+    @media (max-width: 480px) {
+        padding: 10px;
+        margin: 0;
+    }
 `
 
 SkinnyLayout.defaultProps = {

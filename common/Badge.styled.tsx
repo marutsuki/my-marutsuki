@@ -10,6 +10,10 @@ export const Badge = styled.div`
     border-radius: 2px;
     padding: 5px;
     margin: 2px;
+
+    @media (max-width: 480px) {
+        width: 6rem;
+    }
 `
 
 export const BadgeImage = styled.img`
@@ -19,6 +23,10 @@ export const BadgeImage = styled.img`
 
 export const BadgeLabel = styled.label`
     margin-top: 0.5rem;
+
+    @media (max-width: 480px) {
+        font-size: 0.9rem;
+    }
 `
 
 export const SkillStackRowHover = styled.div`

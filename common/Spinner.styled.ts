@@ -69,3 +69,12 @@ export const Star = styled.span`
     background-size: contain;
     animation: ${rotateAnimation} 1.7s infinite ease-in-out reverse, ${flashAnimation} 1.7s infinite ease-in-out;
 `
+
+export const StarNoAnimation = styled.span`
+    width: 1em;
+    height: 1em;
+    font-size: 90px;
+    position: absolute;
+    background-image: url("/images/marustar.png");
+    background-size: contain;
+`

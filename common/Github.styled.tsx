@@ -6,33 +6,10 @@ export const ProjectSection = styled.section`
     display: grid;
     place-items: center;
     grid-template-columns: 1fr 1fr;
-`
-export const RepositoryCard = styled.a`
-    &:hover {
-        background: var(--highlight-color);
-        color: var(--bg-color);
+
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
     }
-
-    &:hover * {
-        color: var(--bg-color);
-    }
-
-    display: flex;
-    flex-direction: column;
-    height: calc(9rem + 60px);
-    width: 200px;
-    margin: 1rem;
-
-    background: var(--accent-color);
-    box-shadow: 1px 1px 1px 1px var(--shadow-color);
-    border-radius: 10px;
-
-    padding: 10px;
-
-    transition: all linear 0.1s;
-
-    color: var(--primary-color);
-    text-decoration: none;
 `
 
 export const RepositoryImage = styled.img`
@@ -248,4 +225,45 @@ export const GithubProfileCard = styled.div`
     box-shadow: 1px 1px 1px 1px var(--shadow-color);
 
     transition: all linear 0.1s;
+`
+
+export const RepositoryCard = styled.a`
+    &:hover {
+        background: var(--highlight-color);
+        color: var(--bg-color);
+    }
+
+    &:hover * {
+        color: var(--bg-color);
+    }
+
+    display: flex;
+    flex-direction: column;
+    height: calc(9rem + 60px);
+    width: 200px;
+    margin: 1rem;
+
+    background: var(--accent-color);
+    box-shadow: 1px 1px 1px 1px var(--shadow-color);
+    border-radius: 10px;
+
+    padding: 10px;
+
+    transition: all linear 0.1s;
+
+    color: var(--primary-color);
+    text-decoration: none;
+
+    @media (max-width: 480px) {
+        width: 240px;
+        height: 9rem;
+        & ${ActionIconWrapper} {
+            display: none;
+        }
+
+        & ${RepositoryTitle} {
+            font-size: 1rem;
+            text-align: center;
+        }
+    }
 `

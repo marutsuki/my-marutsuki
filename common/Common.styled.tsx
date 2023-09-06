@@ -17,6 +17,11 @@ export const Separator = styled.hr`
     border: none;
     height: 5px;
     animation: 0.5s ease-out ${Expand};
+
+    @media (max-width: 480px) {
+        width: 60%;
+        height: 2px;
+    }
 `
 
 export interface TooltipProps {
@@ -73,6 +78,7 @@ export const DataTable = styled.table`
         width: 100%;
         display: grid;
         place-items: center;
+        place-content: space-between;
         grid-template-columns: 0.5fr 1fr;
         grid-template-areas:
             'col1 col2'
