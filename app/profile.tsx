@@ -1,12 +1,14 @@
-import { Section } from "common/Container.styled";
-import { ProfileBio, ProfileImage, ProfileSkeleton, ProfileTitle } from "common/Profile.styled";
+import { Section } from 'common/Container.styled'
+import { ProfileBio, ProfileImage, ProfileSkeleton, ProfileTitle } from 'common/Profile.styled'
+import React from 'react'
+
 interface ProfileProps {
-    avatarRef: string,
-    name: string,
-    bio: string
+  avatarRef: string
+  name: string
+  bio: string
 }
-const Profile: React.FC<ProfileProps> = ({avatarRef, name, bio}) => {
-    return <Section>
+const Profile: React.FC<ProfileProps> = ({ avatarRef, name, bio }) => {
+  return <Section>
         <ProfileSkeleton>
         <ProfileImage src={avatarRef}/>
         <section>
@@ -21,4 +23,4 @@ const Profile: React.FC<ProfileProps> = ({avatarRef, name, bio}) => {
         </Section>
 }
 
-export default Profile;
+export default Profile

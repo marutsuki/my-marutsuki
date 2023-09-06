@@ -1,6 +1,6 @@
-import { keyframes, styled } from "styled-components";
+import { keyframes, styled } from 'styled-components'
 
-const GRADIENT = "linear-gradient(90deg, transparent, var(--primary-color) 25%, var(--primary-color) 75%, transparent)"
+const GRADIENT = 'linear-gradient(90deg, transparent, var(--primary-color) 25%, var(--primary-color) 75%, transparent)'
 
 const Expand = keyframes`
     0% {
@@ -20,10 +20,10 @@ export const Separator = styled.hr`
 `
 
 export interface TooltipProps {
-    theme: {
-        left: string
-        top: string
-    }
+  theme: {
+    left: string
+    top: string
+  }
 }
 export const Tooltip = styled.div<TooltipProps>`
     position: absolute;

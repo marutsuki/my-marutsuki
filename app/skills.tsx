@@ -1,31 +1,31 @@
-import { Badge, BadgeImage, BadgeLabel, SkillStack, SkillStackRow, SkillStackRowHover } from "common/Badge.styled"
-import { Title } from "common/Common.styled";
-import { Section } from "common/Container.styled";
+import { Badge, BadgeImage, BadgeLabel, SkillStack, SkillStackRow, SkillStackRowHover } from 'common/Badge.styled'
+import { Title } from 'common/Common.styled'
+import { Section } from 'common/Container.styled'
+import React from 'react'
 
 interface Skill {
-    name: string,
-    image: string
+  name: string
+  image: string
 }
 interface SkillGroup {
-    name: string,
-    skills: Array<Skill>
+  name: string
+  skills: Skill[]
 }
 interface SkillsProps {
-    levels: number;
-    groups: Map<number, SkillGroup>
-}
-
-const Skills: React.FC<SkillsProps> = ({levels, groups}) => {
-    return <Section>
+  levels: number
+  groups: Map<number, SkillGroup>
+};
+const Skills: React.FC<SkillsProps> = ({ levels, groups }) => {
+  return <Section>
        <SkillStack>
         <Title>
             What I Use
-        </Title>
+        </Title>a
         {
-            [...Array(levels).keys()].reverse().map(level => <SkillStackRow>
+            [...Array(levels).keys()].reverse().map(level => <SkillStackRow key={level}>
                 {
-                    groups.get(level)?.skills.map(skill => 
-                        <Badge>
+                    groups.get(level)?.skills.map(skill =>
+                        <Badge key={skill.name}>
                             <BadgeImage src={skill.image}/>
                             <BadgeLabel>
                                 {skill.name}
@@ -33,13 +33,13 @@ const Skills: React.FC<SkillsProps> = ({levels, groups}) => {
                         </Badge>)
                 }
                     <SkillStackRowHover>
-                        {groups.get(level)?.name || ""}
+                        {groups.get(level)?.name !== undefined || ''}
                     </SkillStackRowHover>
                 </SkillStackRow>
-                || "")
+            )
         }
     </SkillStack>
     </Section>
 }
 
-export default Skills;
+export default Skills

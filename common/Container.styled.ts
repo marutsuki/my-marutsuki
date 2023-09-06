@@ -1,5 +1,5 @@
-'use client';
-import { keyframes, styled } from "styled-components";
+'use client'
+import { keyframes, styled } from 'styled-components'
 
 export const App = styled.html`
     --bg-color: #202329;
@@ -19,7 +19,7 @@ export const Body = styled.body`
     & * {
         box-sizing: content-box;
     }
-`;
+`
 
 export const CenteredLayout = styled.main`
     height: 100%;
@@ -65,9 +65,9 @@ export const Section = styled.div`
 `
 
 SkinnyLayout.defaultProps = {
-    theme: {
-        width: "600px"
-    }
+  theme: {
+    width: '600px'
+  }
 }
 
 export const ProfileThemeWrapper = styled.div`

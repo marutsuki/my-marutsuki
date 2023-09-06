@@ -1,5 +1,6 @@
-import { keyframes, styled } from "styled-components";
-import { Tooltip } from "./Common.styled";
+import React from 'react'
+import { keyframes, styled } from 'styled-components'
+import { Tooltip } from './Common.styled'
 
 export const ProjectSection = styled.section`
     display: grid;
@@ -47,10 +48,10 @@ export const RepositoryDesc = styled.p`
 `
 
 interface ActionIconInternalProps {
-    theme: {
-        width?: string;
-        contrast?: string;
-    }
+  theme: {
+    width?: string
+    contrast?: string
+  }
 }
 
 export const ActionIconInternal = styled.img<ActionIconInternalProps>`
@@ -64,10 +65,10 @@ export const ActionIconInternal = styled.img<ActionIconInternalProps>`
 
     position: relative;
 
-    height: ${props => props.theme.width || "40px"};
-    max-width: ${props => props.theme.width || "40px"};
+    height: ${props => props.theme.width || '40px'};
+    max-width: ${props => props.theme.width || '40px'};
     
-    filter: invert(calc(${props => props.theme.contrast || "10%"}));
+    filter: invert(calc(${props => props.theme.contrast || '10%'}));
 
     transition: all linear 0.1s;
 
@@ -84,15 +85,15 @@ export const ActionIconWrapper = styled.div`
 `
 
 interface ActionIconProps {
-    src: string;
-    onClick: () => void;
-    tooltip?: string;
-    width?: string;
-    contrast?: string;
+  src: string
+  onClick: () => void
+  tooltip?: string
+  width?: string
+  contrast?: string
 }
-export const ActionIcon: React.FC<ActionIconProps> = ({src, onClick, tooltip, width, contrast}) => {
-    return <ActionIconWrapper>
-        <ActionIconInternal src={src} onClick={onClick} theme={{width, contrast}}/>
+export const ActionIcon: React.FC<ActionIconProps> = ({ src, onClick, tooltip, width, contrast }) => {
+  return <ActionIconWrapper>
+        <ActionIconInternal src={src} onClick={onClick} theme={{ width, contrast }}/>
         {tooltip && <Tooltip>{tooltip}</Tooltip>}
     </ActionIconWrapper>
 }

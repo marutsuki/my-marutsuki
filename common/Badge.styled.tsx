@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components'
 
 export const Badge = styled.div`
     display: flex;
@@ -10,16 +10,16 @@ export const Badge = styled.div`
     border-radius: 2px;
     padding: 5px;
     margin: 2px;
-`;
+`
 
 export const BadgeImage = styled.img`
     max-width: 2rem;
     border-radius: 50%;
-`;
+`
 
 export const BadgeLabel = styled.label`
     margin-top: 0.5rem;
-`;
+`
 
 export const SkillStackRowHover = styled.div`
     position: absolute;
@@ -31,7 +31,7 @@ export const SkillStackRowHover = styled.div`
     overflow: hidden;
     text-align: center;
     line-height: 2.5rem;
-`;
+`
 
 export const SkillStackRow = styled.div`
     &:hover ${SkillStackRowHover} {
@@ -43,7 +43,7 @@ export const SkillStackRow = styled.div`
     justify-content: center;
     overflow: hidden;
     cursor: pointer;
-`;
+`
 
 export const SkillStack = styled.div`
-`;
+`

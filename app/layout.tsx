@@ -1,12 +1,12 @@
-import { ReactNode } from "react";
-import { App, Body,  } from "../common/Container.styled";
+import React, { type ReactNode } from 'react'
+import { App, Body } from '../common/Container.styled'
 
-export default function RootLayout({
-    children,
+export default function RootLayout ({
+  children
 }: {
-    children: ReactNode
-}) {
-    return (
+  children: ReactNode
+}): React.ReactNode {
+  return (
         <App lang="en">
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>
@@ -15,5 +15,5 @@ export default function RootLayout({
                 {children}
             </Body>
         </App>
-    )
+  )
 }

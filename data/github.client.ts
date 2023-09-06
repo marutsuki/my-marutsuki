@@ -1,56 +1,57 @@
-import axios from "axios";
-import { Repository, fromJSON as repoFromJSON } from "./model/Repository";
-import { User, fromJSON as userFromJSON} from "./model/User";
-const endpoint = "https://api.github.com";
+import axios from 'axios'
+import { type Repository, fromJSON as repoFromJSON } from './model/Repository'
+import { type User, fromJSON as userFromJSON } from './model/User'
+const endpoint = 'https://api.github.com'
 
 const DEFAULT_HEADERS = {
-    'X-GitHub-Api-Version': '2022-11-28'
+  'X-GitHub-Api-Version': '2022-11-28'
 }
 export interface GithubData {
-    repos?: Array<Repository>,
-    user?: User
+  repos?: Repository[]
+  user?: User
 }
 class GitHubClient {
+  private static readonly GITHUB_USERNAME: string = 'marutsuki'
+  private static readonly REPO_ENDPOINT: string = `${endpoint}/users/${GitHubClient.GITHUB_USERNAME}/repos`
+  private static readonly USER_ENDPOINT: string = `${endpoint}/users/${GitHubClient.GITHUB_USERNAME}`
+  private readonly cache: GithubData = {}
+  private async getRepos (): Promise<Repository[]> {
+    if (this.cache.repos !== undefined) {
+      return this.cache.repos
+    }
+    const res = await axios.get(
+      GitHubClient.REPO_ENDPOINT,
+      {
+        headers: DEFAULT_HEADERS
+      }
+    )
+    const repos = res.data.map(jsonObject => repoFromJSON(jsonObject))
+    this.cache.repos = repos
+    return repos
+  }
 
-    private static readonly GITHUB_USERNAME: string = "marutsuki"
-    private static readonly REPO_ENDPOINT: string = `${endpoint}/users/${GitHubClient.GITHUB_USERNAME}/repos`;
-    private static readonly USER_ENDPOINT: string = `${endpoint}/users/${GitHubClient.GITHUB_USERNAME}`;
-    private cache: GithubData = {};
-    private async getRepos() {
-        if (this.cache.repos !== undefined) {
-            return this.cache.repos;
-        }
-        const res = await axios.get(
-            GitHubClient.REPO_ENDPOINT,
-            {
-                headers: DEFAULT_HEADERS
-            }
-        );
-        const repos = res.data.map(jsonObject => repoFromJSON(jsonObject));
-        this.cache.repos = repos;
-        return repos;
+  private async getUser (): Promise<User> {
+    if (this.cache.user !== undefined) {
+      return this.cache.user
     }
-    private async getUser() {
-        if (this.cache.user !== undefined) {
-            return this.cache.user;
-        }
-        const res = await axios.get(
-            GitHubClient.USER_ENDPOINT,
-            {
-                headers: DEFAULT_HEADERS
-            }
-        );
-        const user = userFromJSON(res.data);
-        this.cache.user = user;
-        return user;
-    }
-    async getAll() {
-        const requests = [this.getRepos(), this.getUser()];
-        await Promise.all(requests);
-        return this.cache;
-    }
+    const res = await axios.get(
+      GitHubClient.USER_ENDPOINT,
+      {
+        headers: DEFAULT_HEADERS
+      }
+    )
+    const user = userFromJSON(res.data)
+    this.cache.user = user
+    return user
+  }
+
+  async getAll (): Promise<GithubData> {
+    const requests = [this.getRepos(), this.getUser()]
+    await Promise.all(requests)
+    return this.cache
+  }
 }
 
-const INSTANCE = new GitHubClient();
+const INSTANCE = new GitHubClient()
 
-export { INSTANCE as GitHubClient };
+export { INSTANCE as GitHubClient }

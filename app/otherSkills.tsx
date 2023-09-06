@@ -1,8 +1,9 @@
-import { TextBlock, Title } from "common/Common.styled"
-import { Section } from "common/Container.styled";
+import { TextBlock, Title } from 'common/Common.styled'
+import { Section } from 'common/Container.styled'
+import React from 'react'
 
-const OtherSkills: React.FC<{}> = () => {
-    return <Section>
+const OtherSkills: React.FC<unknown> = () => {
+  return <Section>
         <Title>
             Other things I use
         </Title>
@@ -24,4 +25,4 @@ const OtherSkills: React.FC<{}> = () => {
     </Section>
 }
 
-export default OtherSkills;
+export default OtherSkills

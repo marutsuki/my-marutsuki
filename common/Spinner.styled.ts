@@ -1,5 +1,5 @@
-'use client';
-import { keyframes, styled } from "styled-components";
+'use client'
+import { keyframes, styled } from 'styled-components'
 
 const loadAnimation = keyframes`
     0% {
@@ -22,7 +22,7 @@ const loadAnimation = keyframes`
     100% {
         box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
     }
-`;
+`
 
 const rotateAnimation = keyframes`
     0% {
@@ -33,7 +33,7 @@ const rotateAnimation = keyframes`
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
-`;
+`
 
 const flashAnimation = keyframes`
     35%,
@@ -58,7 +58,7 @@ export const Spinner = styled.span`
     border-radius: 50%;
     position: absolute;
     animation: ${loadAnimation} 1.7s infinite ease, ${rotateAnimation} 1.7s infinite ease;
-`;
+`
 
 export const Star = styled.span`
     width: 1em;
@@ -68,4 +68,4 @@ export const Star = styled.span`
     background-image: url("/images/marustar.png");
     background-size: contain;
     animation: ${rotateAnimation} 1.7s infinite ease-in-out reverse, ${flashAnimation} 1.7s infinite ease-in-out;
-`;
+`

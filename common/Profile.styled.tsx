@@ -1,11 +1,11 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components'
 
 export const ProfileSkeleton = styled.div`
     display: grid;
     grid-template:
         "image title"
         "image bio"
-`;
+`
 
 export const ProfileImage = styled.img`
     max-width: 15rem;
