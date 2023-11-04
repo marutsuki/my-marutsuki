@@ -7,6 +7,11 @@ const OtherSkills: React.FC<unknown> = () => {
         <Title>
             Other things I use
         </Title>
+
+        <TextBlock>
+            Spring Web • Spring Security • Spring Reactive Web • JDBC
+        </TextBlock>
+        
         <TextBlock>
         styled-components • electron • SASS/SCSS
         </TextBlock>

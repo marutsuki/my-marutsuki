@@ -216,6 +216,9 @@ export const GithubProfileCard = styled.div`
         color: var(--bg-color);
     }
 
+    & * {
+        text-align: center !important;
+    }
     
     position: relative;
     padding: 30px;

@@ -14,11 +14,35 @@ const Home: React.FC<unknown> = () => {
       <SkinnyLayout>
         <Profile name="Lucien" bio="During the weekdays, a Software Engineer. During the weekends, a digital artist and musician." avatarRef="/images/me.png"/>
         <Separator/>
-        <SkillStack levels={4} groups={
+        <SkillStack levels={5} groups={
             new Map(
               [
                 [
                   0,
+                  {
+                    name: 'Platform and CI',
+                    skills: [
+                      {
+                        name: 'AWS',
+                        image: '/images/aws.png'
+                      },
+                      {
+                        name: 'Docker',
+                        image: '/images/docker.png'
+                      },
+                      {
+                        name: 'Jenkins',
+                        image: '/images/jenkins.png'
+                      },
+                      {
+                        name: 'Github Actions',
+                        image: '/images/githubActions.png'
+                      }
+                    ]
+                  }
+                ],
+                [
+                  1,
                   {
                     name: 'Database',
                     skills: [
@@ -39,7 +63,7 @@ const Home: React.FC<unknown> = () => {
 
                 ],
                 [
-                  1,
+                  2,
                   {
                     name: 'Backend',
                     skills: [
@@ -59,7 +83,7 @@ const Home: React.FC<unknown> = () => {
                   }
                 ],
                 [
-                  2,
+                  3,
                   {
                     name: 'Frontend',
                     skills: [
@@ -75,13 +99,13 @@ const Home: React.FC<unknown> = () => {
                   }
                 ],
                 [
-                  3,
+                  4,
                   {
-                    name: 'Cloud',
+                    name: 'Graphics',
                     skills: [
                       {
-                        name: 'AWS',
-                        image: '/images/aws.png'
+                        name: 'WebGL2',
+                        image: '/images/webgl.png'
                       }
                     ]
                   }
