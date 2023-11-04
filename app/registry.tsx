@@ -20,7 +20,7 @@ const StyledComponentsRegistry: React.FC<StyledComponentsRegistryProps> = ({ chi
 
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
-      {children as React.ReactChild}
+      {children}
     </StyleSheetManager>
   )
 }

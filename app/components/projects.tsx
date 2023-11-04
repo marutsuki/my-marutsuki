@@ -1,14 +1,14 @@
 'use client'
-import { SubTitle, Title } from 'common/Common.styled'
-import { Section } from 'common/Container.styled'
-import { ActionIcon, ActionIconRow, ProjectSection, RepositoryCard, RepositoryDesc, RepositoryTitle } from 'common/Github.styled'
+import { SubTitle, Title } from 'common/styled/Common.styled'
+import { Section } from 'common/styled/Container.styled'
+import { ActionIcon, ActionIconRow, ProjectSection, RepositoryCard, RepositoryDesc, RepositoryTitle } from 'common/styled/Github.styled'
 import { GitHubClient } from 'data/github.client'
 import { type Repository } from 'data/model/Repository'
 import { useGithubClient } from 'hooks/useGithubClient'
 import { type GetStaticProps } from 'next'
 import React, { useState } from 'react'
 import { newTab } from 'util/redirect'
-import CloneWindowWrapper from './cloneWindow'
+import CloneWindowWrapper from '../../common/cloneWindow'
 
 const Projects: React.FC<unknown> = () => {
   const repos = useGithubClient<Repository[]>(data => data.repos)

@@ -1,7 +1,7 @@
 import {
   ActionIcon, ActiveTabBar, CloneInput, CloneTabBar, CloneTabButton, CloneUrl, CloneWindow,
   CloneWindowTitle
-} from 'common/Github.styled'
+} from 'common/styled/Github.styled'
 import { type Repository } from 'data/model/Repository'
 import React, { useEffect, useRef, useState } from 'react'
 import { copyText } from 'util/copy'

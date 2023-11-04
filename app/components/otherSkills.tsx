@@ -1,5 +1,5 @@
-import { TextBlock, Title } from 'common/Common.styled'
-import { Section } from 'common/Container.styled'
+import { TextBlock, Title } from 'common/styled/Common.styled'
+import { Section } from 'common/styled/Container.styled'
 import React from 'react'
 
 const OtherSkills: React.FC<unknown> = () => {

@@ -1,5 +1,5 @@
-import { Section } from 'common/Container.styled'
-import { ProfileBio, ProfileImage, ProfileSkeleton, ProfileTitle } from 'common/Profile.styled'
+import { Section } from 'common/styled/Container.styled'
+import { ProfileBio, ProfileImage, ProfileSkeleton, ProfileTitle } from 'common/styled/Profile.styled'
 import React from 'react'
 
 interface ProfileProps {

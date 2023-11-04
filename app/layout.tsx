@@ -1,4 +1,4 @@
-import { App, Body } from 'common/Container.styled'
+import { App, Body } from 'common/styled/Container.styled'
 import { Quicksand } from 'next/font/google'
 import React, { type ReactNode } from 'react'
 import StyledComponentsRegistry from './registry'

@@ -1,6 +1,6 @@
-import { DataTable, FlexRow, Link, Title } from 'common/Common.styled'
-import { Section } from 'common/Container.styled'
-import { ActionIcon } from 'common/Github.styled'
+import { DataTable, FlexRow, Link, Title } from 'common/styled/Common.styled'
+import { Section } from 'common/styled/Container.styled'
+import { ActionIcon } from 'common/styled/Github.styled'
 import React from 'react'
 import { copyText } from 'util/copy'
 

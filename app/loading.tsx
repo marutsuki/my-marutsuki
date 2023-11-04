@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect } from 'react'
-import { CenteredLayout } from '../common/Container.styled'
-import { MaruSpinner } from '../common/Spinner'
+import { CenteredLayout } from '../common/styled/Container.styled'
+import { MaruSpinner } from '../common/styled/Spinner'
 
 interface LoadingProps {
   callback: () => void

@@ -1,12 +1,12 @@
 import Profile from 'app/profile'
-import { Separator } from 'common/Common.styled'
-import { ProfileThemeWrapper, SkinnyLayout, VerticalMiddleLayout } from 'common/Container.styled'
+import { Separator } from 'common/styled/Common.styled'
+import { ProfileThemeWrapper, SkinnyLayout, VerticalMiddleLayout } from 'common/styled/Container.styled'
 import React from 'react'
-import Contact from './contact'
-import GithubProfile from './github'
-import OtherSkills from './otherSkills'
-import Projects from './projects'
-import SkillStack from './skills'
+import Contact from './components/contact'
+import GithubProfile from './components/github'
+import OtherSkills from './components/otherSkills'
+import Projects from './components/projects'
+import SkillStack from './components/skills'
 
 const Home: React.FC<unknown> = () => {
   return <ProfileThemeWrapper>

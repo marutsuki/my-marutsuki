@@ -1,6 +1,6 @@
-import { Badge, BadgeImage, BadgeLabel, SkillStack, SkillStackRow, SkillStackRowHover } from 'common/Badge.styled'
-import { Title } from 'common/Common.styled'
-import { Section } from 'common/Container.styled'
+import { Badge, BadgeImage, BadgeLabel, SkillStack, SkillStackRow, SkillStackRowHover } from 'common/styled/Badge.styled'
+import { Title } from 'common/styled/Common.styled'
+import { Section } from 'common/styled/Container.styled'
 import React from 'react'
 
 interface Skill {
